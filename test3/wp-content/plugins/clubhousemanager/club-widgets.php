@@ -1,0 +1,181 @@
+<?php
+
+class club_Widget extends WP_Widget 
+{
+
+  public $display_types = array();
+
+  function club_Widget() 
+  {
+    $this->display_types = array(
+        0  => __('Top Batters', 'club'),
+        1  => __('Top Pitchers', 'club'),
+       1  => __('Top fielding', 'club'),
+        2  => __('Last Game', 'club'),
+        3  => __('Next Game', 'club'),
+        4  => __('Bat Stats', 'club'),
+        5  => __('Roster', 'club'),
+        6  => __('Pitch Stats', 'club'),
+        7  => __('Field Stats', 'club'),
+        8  => __('Player Stats', 'club'),
+        9  => __('Top 5 Stats', 'club'),
+       10  => __('Team Schedule', 'club'),
+       11  => __('Team Practices', 'club'),
+       12  => __('Team Tournaments', 'club'),
+       13  => __('Locations Info', 'club'),
+       14  => __('Game Results', 'club')
+
+      );
+
+    /* Widget settings. */
+    $widget_ops = array('classname' => 'club', 'description' => __('Displays various stats and results.','club') );
+
+    /* Widget control settings. */
+    $control_ops = array('width' => 420, 'height' => 510);
+
+    /* Create the widget. */
+    $this->WP_Widget('club', __('ClubhouseManager Stats View','club'), $widget_ops, $control_ops);
+  }
+	
+
+  function widget($args, $instance) 
+  {
+    extract($args);
+
+    if ( empty($instance['title']) AND $instance['display_def_title'] )
+      $instance['title'] = $this->display_types[$instance['display_type']];
+    $title = apply_filters('widget_title', $instance['title']);
+
+    if (!isset($instance['display_def_title']))
+      $instance['display_def_title'] = false;
+
+    echo $before_widget;
+    echo $before_title.$title.$after_title;
+    echo '<div class="club_widget">';
+    club_display_widget($instance);
+    echo '</div>';
+    echo $after_widget;
+  }
+	
+
+  function update($new_instance, $old_instance) 
+  {
+    $instance = $old_instance;
+    if ($new_instance['display_def_title'] = 'on'){
+      $instance['title']           = $this->display_types[$instance['display_type']];
+    }else{
+    $instance['title']             = strip_tags($new_instance['title']);
+    }
+    $instance['display_type']      = (int) $new_instance['display_type'];
+    $instance['display_def_title'] = $new_instance['display_def_title'];
+    $instance['team']              = $new_instance['team'];
+    $instance['season']            = $new_instance['season'];
+
+    return $instance;
+  }
+
+  function form($instance) 
+  {
+    /* Set up some default widget settings. */
+    $defaults = array(
+			'title' => '', 'display_type' => 0, 'display_def_title' => 'on', 'team' => 'Flying Dogs', 
+			'season' => '2008'
+		);
+    $defs = club_get_defaults();
+    $seasons_list = club_get_seasons();
+    $team_list    = club_get_teams();
+
+    $instance = wp_parse_args((array) $instance, $defaults);
+
+    $display_types = array(
+        0  => __('Top Batters', 'club'),
+        1  => __('Top Pitchers', 'club'),
+        1  => __('Top fielding', 'club'),
+        2  => __('Last Game', 'club'),
+        3  => __('Next Game', 'club'),
+        4  => __('Bat Stats', 'club'),
+        5  => __('Roster', 'club'),
+        6  => __('Pitch Stats', 'club'),
+        7  => __('Field Stats', 'club'),
+        8  => __('Player Stats', 'club'),
+        9  => __('Top 5 Stats', 'club'),
+       10  => __('Team Schedule', 'club'),
+       11  => __('Team Practices', 'club'),
+       12  => __('Team Tournaments', 'club'),
+       13  => __('Locations Info', 'club'),
+       14  => __('Game Results', 'club')
+      );
+
+
+    echo 
+    '  <div style="text-align:center">
+         <h3>' . __('Display Stats and Results', 'club') . '</h3>
+         <span style="line-height:15px"><br /><br /></span>
+         <table>
+         <tr>
+           <td style="text-align:left;"><strong>' . __('Title', 'club') . '</strong></td>
+           <td><input style="text-align:right" type="text" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" value="' . esc_attr($instance['title']) . '" /></td>
+           <td style="font-size:0.75em">' . __('Custom Title - shown in sidebar.', 'club') . '</td>
+         </tr>
+         <tr>
+           <td style="text-align:left;"><strong>' . __('Display default title', 'club') . '</strong></td>
+           <td><input class="checkbox" type="checkbox" ' . checked( $instance['display_def_title'], 'on', false ) . ' id="' . $this->get_field_id('display_def_title') . '" name="' . $this->get_field_name('display_def_title') . '" /></td>
+           <td style="font-size:0.75em">' . __('Display the default title or the custom title.', 'club') . '</td>
+         </tr>
+         <tr>
+           <td style="text-align:left;"><strong>' . __('Display Type', 'club') . '</strong></td>
+           <td style="text-align:right;">
+             <select id="' . $this->get_field_id('display_type') . '" name="' . $this->get_field_name('display_type') . '" size="1">';
+
+    for ( $i=0; $i < count($this->display_types); $i++ )
+    {
+      if ( $instance['display_type'] == $i )
+        echo '    <option value="' . $i . '" selected="selected">' . $this->display_types[$i] . '</option>';
+      else
+        echo '    <option value="' . $i . '">' . $this->display_types[$i] . '</option>';
+    }
+
+    echo 
+    '
+             </select>
+           </td>
+           <td style="font-size:0.75em">' . __('What type of statistic should be displayed', 'club') . '</td> 
+         </tr>
+         <tr>
+           <td style="text-align:left;"><strong>' . __('Team', 'club') . '</strong></td>
+           <td style="text-align:right;">
+             <select id="' . $this->get_field_id('team') . '" name="' . $this->get_field_name('team') . '" size="1">';
+  for ( $i=0; $i < count($team_list); $i++ )
+  {
+    if ( $team_list[$i] == $defs['defaultTeam'] )
+    echo '<option value="' . $team_list[$i] . '" selected="yes">' . $team_list[$i] . '</option>';
+    else
+    echo '<option value="' . $team_list[$i] . '">' . $team_list[$i] . '</option>';
+  }
+
+    echo '
+           </td>
+         </tr>
+         <tr>
+           <td style="text-align:left;"><strong>' . __('Season', 'club') . '</strong></td>
+           <td style="text-align:right;">
+             <select id="' . $this->get_field_id('season') . '" name="' . $this->get_field_name('season') . '" size="1">';
+  for ( $i=0; $i < count($seasons_list); $i++ )
+  {
+    if ( $seasons_list[$i] == $defs['defaultSeason'] )
+    echo '<option value="' . $seasons_list[$i] . '" selected="yes">' . $seasons_list[$i] . '</option>';
+    else
+    echo '<option value="' . $seasons_list[$i] . '">' . $seasons_list[$i] . '</option>';
+  }
+
+    echo '
+           </td>
+         </tr>
+       </table>
+     </div>';
+  }
+}
+
+
+
+?>

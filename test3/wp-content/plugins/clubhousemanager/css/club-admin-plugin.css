@@ -1,0 +1,476 @@
+#club-plugin-main
+{
+  width:  90%;
+}
+
+#club-plugin-main .postbox,
+#club-plugin-news .postbox
+{
+  min-width:  150px;
+}
+
+#club-plugin-news
+{
+  width:  24%;
+}
+
+.submit-bottom-div
+{
+  position:   relative;
+  display:    block;
+  clear:      both;
+  min-height: 25px;
+}
+
+.label-hb
+{
+  position:  relative;
+  min-width: 5em;
+  display:   inline;
+  float:     left;
+}
+
+.select-season-single
+{
+  min-width: 5em;
+}
+
+.select-team-single
+{
+  min-width: 10em;
+}
+
+.select-teams-multiple
+{
+  min-width:  10em;
+  min-height: 10em;
+  height:     15em;
+}
+
+#club_season_new_id
+{
+}
+
+#club_add_season_btn_id
+{
+  margin-top: 8px;
+}
+
+
+.players-page-link
+{
+  
+}
+
+
+
+/*   players page    */
+
+.player-list-entry-label,
+.locations-list-entry-label
+{
+  position:   relative;
+  min-width:  12em;
+  float:      left;
+}
+
+#club_players_assign_select_id
+{
+  min-width:  13em;
+  min-height: 15em;
+}
+
+
+
+#club-schedules-list .club_option_left_part
+{
+  width:        20%;
+  vAlign:       top;
+  padding-top:  10px;
+  font-weight:  normal;
+  font-size:    12px;
+}
+
+.games-list-entry-label,
+.tournaments-list-entry-label
+{
+  font-size: 11px;
+  font-family: arial;
+}
+
+
+.game-results-table
+{
+  position:  relative;
+  display:   block;
+  clear:     both;
+  overflow:  auto;
+  padding-top:10px;
+}
+
+#game-results-dump
+{
+  position:  relative;
+  display:   block;
+  clear:     both;
+  overflow:  auto;
+}
+
+.club_loading_status
+{
+  position:  relative;
+  display:   block;
+  clear:     both;
+  overflow:  auto;
+}
+
+.gresults-form-table
+{
+  position:  relative;
+  float:     left;
+  width:     auto;
+  max-width: 95%;
+  font-size: 11px;
+}
+
+.gresults-form-table td,
+.gresults-form-table input,
+.gresults-form-table p
+{
+  font-size: 11px;
+}
+
+
+.meta-box-sortables
+{
+  margin: 0px 5px;
+}
+
+.margintb
+{
+  margin: 5px 0 5px 0;
+}
+
+.right-bottom
+{
+  float:  right;
+}
+
+.right-bottom a
+{
+  text-decoration: none;
+  margin-top:      5px;
+}
+
+.postbox .inside
+{
+  position:  relative;
+  margin:    10px;
+}
+
+#club-plugin-main .postbox .inside .submit
+{
+  margin:  5px 0px 0px 0px;
+  padding: 0px;
+  float:   none;
+}
+
+.one-row
+{
+  position:  relative;
+  display:   inline;
+  float:     left;
+}
+
+.clear
+{
+  clear:     both;
+}
+
+.float-left
+{
+  position: relative;
+  float:  left;
+}
+
+.float-right
+{
+  position: relative;
+  float:  right;
+}
+
+.link-extern
+{
+  text-decoration: none;
+}
+
+.club-icon32
+{
+  margin: 14px 6px 0px 5px;
+  float:  left;
+  width:  36px;
+  height: 36px;
+   
+  background: transparent url(../images/clubhouseManager_32x32.gif) no-repeat top left;
+}
+
+#club-fields-edit .inside,
+#club-settings .inside,
+#club-schedules-edit .inside,
+#club-tournaments-edit .inside
+{
+  background: transparent url(../images/clubhouseManager_48x48.gif) no-repeat right bottom;
+}
+
+.club_option_left_part
+{
+  width:        40%;
+  vAlign:       top;
+  padding-top:  10px;
+  font-weight:  bold;
+  font-size:    12px;
+}
+
+.div-wait
+{
+  display: none;
+  padding: 0px;
+  margin:  0px;
+}
+
+.div-wait img
+{
+  height: 25px; 
+  width: 25px;
+  margin-bottom:-8px;
+}
+
+.img-link-ico
+{
+  margin-right:  5px;
+}
+
+select#fitcash_import_cats_select_tag
+{
+  height: auto;
+}
+#normal-sortables .postbox .submit
+{
+   float: left;
+   margin: 8px 0 ; 
+}
+
+.ds_box 
+{
+	background-color: #FFF;
+	border: 2px solid #336699;    
+	position: absolute;
+	z-index: 32767;
+        width:300px;
+		/*height:180px;*/
+        padding-left:10px;
+        padding-right:10px;
+        padding-bottom:10px;
+        font-size:12px;
+        font-family: arial;
+}
+
+
+.settingsForm
+{
+  width:400px;
+  display:block;
+}
+
+.settingsForm hr
+{
+  color:#F1F1F1;
+}
+
+.settingsForm h2
+{
+  font-weight: normal;
+}
+
+.settingsForm table
+{
+  width:100%;
+  border:0;
+}
+
+/*.settingsForm table td{
+     padding: 6px;
+}*/
+
+.form_element_caption
+{
+  padding-top:12px;
+  font-weight:bold;
+  font-size:12px;
+  width:100%;
+}
+
+.settingsForm textarea
+{
+  width:100%;
+}
+
+.settingsForm .rb
+{
+  margin:0px 10px 0px 10px;
+}
+
+.settingsForm .frb
+{
+  margin:0px 10px 0px 0px;
+}
+
+
+
+#club_widget_locations_info_field_id
+{
+  font-size:  11px;
+  
+}
+    
+div.tabs {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+a.tab {
+  background-color: #f0f0f0;
+  border: 1px solid #000000;
+  border-bottom-width: 0px;
+  padding: 2px 2em 2px 2em;
+  text-decoration: none;
+}
+
+a.tab, a.tab:visited {
+  color: #808080;
+}
+
+a.tab:hover {
+  background-color: #d0d0d0;
+  color: #606060;
+}
+  
+#club_option_subtable {
+  padding: 2px;
+}
+ 
+
+.clubtabs input[type=radio] {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+      }
+
+
+.clubtabs {
+        width: 650px;
+        float: none;
+        list-style: none;
+        position: relative;
+        padding: 0;
+        margin: 75px auto;
+      }
+      .clubtabs li{
+        float: left;
+      }
+      .clubli{
+        padding: 10px;
+      }
+
+      .clubtabs li input label {
+          display: block;
+          padding: 10px 20px;
+          border-radius: 2px 2px 0 0;
+          color: #08C;
+          font-size: 24px;
+          font-weight: normal;
+          font-family: 'Lily Script One', helveti;
+          background: rgba(255,255,255,0.2);
+          cursor: pointer;
+          position: relative;
+          top: 3px;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+      }
+      .clubtabs label:hover {
+        background: rgba(255,255,255,0.5);
+        top: 0;
+      }
+        
+      [id^=tab]:checked + label {
+        background: #08C;
+        color: white;
+        top: 0;
+      }
+        
+      [id^=tab]:checked ~ [id^=tab-content] {
+          display: block;
+      }
+      .tab-content{
+        z-index: 2;
+        display: none;
+        text-align: left;
+        width: 100%;
+        font-size: 20px;
+        line-height: 140%;
+        padding-top: 10px;
+        background: #08C;
+        padding: 15px;
+        color: white;
+        position: absolute;
+        top: 53px;
+        left: 0;
+        box-sizing: border-box;
+        -webkit-animation-duration: 0.5s;
+        -o-animation-duration: 0.5s;
+        -moz-animation-duration: 0.5s;
+        animation-duration: 0.5s;
+      }
+<style type="text/css">
+.has-sidebar-content {width: 100%; margin: 10px auto;}
+ul.tabs {margin: 0px 5px; padding: 0;float: left;list-style: none;height: 32px;border-left: 1px solid #DDD;width: 100%;}
+ul.tabs li {float: left;margin: 0;padding: 0;height: 31px;line-height: 31px;border: 1px solid #DDD;border-left: none;margin-bottom: -1px;background: #F0F0F0;overflow: hidden;position: relative;}
+ul.tabs li a {text-decoration: none;color: #000;display: block;font-size: 1.2em;padding: 0 20px;border: 1px solid #fff;outline: none;}
+ul.tabs li a:hover {background: #ccc;}
+ul.tabs li.active, html ul.tabs li.active a:hover  {background: #fff;border-bottom: 1px solid #fff;}
+.tab_container {border-top: none;clear: both;float: left;width: 100%;background: #fff;-moz-border-radius-bottomright: 5px;-khtml-border-radius-bottomright: 5px;-webkit-border-bottom-right-radius: 5px;-moz-border-radius-bottomleft: 5px;-khtml-border-radius-bottomleft: 5px;-webkit-border-bottom-left-radius: 5px;}
+.tab_container .postbox.tab_content {padding:0px 2%; float: left;width: 96%; margin-bottom: 0px;}
+.tab_container .postbox.tab_content h3 {padding: 10px 0px; border-bottom: 1px solid #EEE; margin-bottom: 15px; float: left;width: 100%; cursor:default; }
+.tab_container .postbox.tab_content h3 a{color: #254588;}.tab_content img {float: left;margin: 0 20px 20px 0;border: 1px solid #ddd;padding: 5px;}
+.tab_container .inside-container {margin-bottom: 25px; float: left;width: 100%; }
+.tab_container .inside-container form {margin-bottom: 0px;}
+.tab_container .inside-container .active-team,
+.tab_container .inside-container .active-season,
+.tab_container .inside-container .active-league,
+.tab_container .inside-container .check-one { float: left;width: 100%; margin-bottom: 15px;}
+.tab_container .inside-container .check-one input { margin: 0px 0px 7px 0px; vertical-align: top;}
+.tab_container .inside-container p {margin: 0px 0px 10px 0px;}
+
+.tab_container .inside-container .chk-plugindev { float: left;width: 100%; margin-top: 15px;}
+.tab_container .inside-container table.form-table {margin: 0px;}
+.tab_container .inside-container .form-table th {padding: 0px;}
+.tab_container .inside-container .form-table td {padding: 0px 0px 20px;}
+.tab_container .inside-container .form-table #club_option_subtable {padding: 3px 0px 0px 0px;}
+.tab_container .inside-container .table-color-options th {width: 250px;}
+.tab_container .inside-container .table-color-options input[type="text"] {border: 1px solid #E5E5E5;}
+.tab_container .inside-container .table-color-options .jPicker {display: inline-block;vertical-align: top; margin-top: 1px;margin-left: 5px;}
+.tab_container .inside-container .table-color-options .jPicker .Icon {height: 26px;border: 1px solid #E5E5E5;}
+
+.inside-container .list-contaier {border: 1px solid #EEEEEE;float: left;margin-top: 25px;padding:5px 10px;width: 50%; height: 110px; overflow: auto;}
+.inside-container .list-contaier .list-item { float: left; width: 100%; padding: 5px 0px; }
+.inside-container .list-contaier .list-item .item-name {float: left;width: 80%;}
+.inside-container .list-contaier .list-item .item-links {float: left;width: 20%;}
+
+.inside-container .clubhouse-uploader { float: left;width: 40%; padding: 1.5%; border: 1px solid #E5E5E5; }
+.inside-container .clubhouse-uploader .uploader {font-size: 18px; font-weight: bold;}
+.inside-container .clubhouse-uploader .uploader span {float: right;}
+.inside-container .clubhouse-uploader input {float: right;}
+#wpfooter {display: none;}
+</style>
